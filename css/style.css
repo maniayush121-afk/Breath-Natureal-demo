@@ -500,11 +500,27 @@ header a {
   color: rgba(255, 255, 255, 0.75);
 }
 
+header  > li > a {
+position: relative;
+}
+
+header li:hover .drop_down {
+  border: 2px solid;
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  content: "";
+  right: 0;
+  left: 0;
+  margin: auto;
+  transition: 0.3s ease-in-out;
+}
+ 
 header a::after {
   content: "";
   position: absolute;
   width: 0;
-  background-color: rgba(166, 166, 166, 0.4); /* #A6A6A6 with opacity */
+  background-color: rgba(166, 166, 166, 0.4);
   left: 50%;
   transform: translateX(-50%);
   bottom: -0.25em;
@@ -1410,8 +1426,7 @@ footer .group_one:nth-child(3n) {
 }
 
 .div_group .left_side_content .group_content p {
-  margin-left: 20px;
-
+  max-width: 280px;
 }
 
 .div_group {
@@ -1420,9 +1435,15 @@ footer .group_one:nth-child(3n) {
 }
 
 .div_group .left_side_content .group_content {
-  background-size: cover;
-  max-width:unset;
+  background-size:contain;
+  max-width: unset;
   margin-top: 50px;
+  flex-direction: column;
+  float: left;
+}
+
+.div_group .right_side_img .fa-solid {
+   display: none;
 }
 
 .Section_two .text_content p {
@@ -1947,6 +1968,11 @@ footer .inline img {
 .Section_four p {
   margin-bottom: 5px;
 }
+
+.div_group .left_side_content .group_content {
+  float:unset;
+}
+
 }
 
  /********************** Responsive css Is End **********************/
